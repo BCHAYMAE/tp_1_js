@@ -8,7 +8,7 @@ Exemple de résultat : « el amrani » ; « EL AMRANI » ; « el amrani » ; lon
 Indication : Utiliser trim(), toUpperCase(), toLowerCase() et length. Les espaces intérieurs sont conservés.
 */
 
-let nom = prompt("Entrez un nom :");
+/*let nom = prompt("Entrez un nom :");
 let nomNettoye = nom.trim();
 let nomMajuscules = nomNettoye.toUpperCase();
 let nomMinuscules = nomNettoye.toLowerCase();
@@ -17,4 +17,26 @@ let longueurNom = nomNettoye.length;
 console.log(`Nom nettoyé : "${nomNettoye}"`);
 console.log(`Version en majuscules : "${nomMajuscules}"`);
 console.log(`Version en minuscules : "${nomMinuscules}"`);
-console.log(`Longueur du nom nettoyé : ${longueurNom}`);
+console.log(`Longueur du nom nettoyé : ${longueurNom}`); */
+
+
+const readline = require("readline");
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question("Entrez un nom : ", (nom) => {
+    let nomNettoye = nom.trim();
+    let nomMajuscules = nomNettoye.toUpperCase();
+    let nomMinuscules = nomNettoye.toLowerCase();
+    let longueurNom = nomNettoye.length;
+
+    console.log(`Nom nettoyé : "${nomNettoye}"`);
+    console.log(`Version en majuscules : "${nomMajuscules}"`);
+    console.log(`Version en minuscules : "${nomMinuscules}"`);
+    console.log(`Longueur du nom nettoyé : ${longueurNom}`);
+
+    rl.close();
+});

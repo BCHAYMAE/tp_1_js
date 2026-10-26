@@ -8,6 +8,23 @@ Exemple de résultat : Pour 25 °C : 77 °F.
 Indication : La valeur renvoyée par prompt() est une chaîne de caractères.
 */
 
-let celsius  = Number(prompt("Entrez la température en degrés Celsius :"));
+/*let celsius  = Number(prompt("Entrez la température en degrés Celsius :"));
 let fahrenheit = celsius * 9 / 5 + 32;
-console.log(`Pour ${celsius} °C : ${fahrenheit} °F.`);
+console.log(`Pour ${celsius} °C : ${fahrenheit} °F.`);*/
+
+
+const readline = require("readline");
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question("Entrez la température en degrés Celsius : ", (input) => {
+    let celsius = Number(input);
+    let fahrenheit = (celsius * 9 / 5) + 32;
+
+    console.log("Température en Fahrenheit :", fahrenheit);
+
+    rl.close();
+});
